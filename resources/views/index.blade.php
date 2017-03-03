@@ -5,6 +5,7 @@
   <title>t-oda.tech portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="author" content="oda">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -176,33 +177,34 @@
 
         <div class="row input-area">
           <div class="col-sm-6">
-            <div class="form-group @if (! empty($errors->first('name'))) has-error @endif">
+            <div class="form-group input-name">
               <label for="name">お名前<span class="label label-danger">必須</span></label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="お名前を入力してください">
-              <span class="help-block">{{ $errors->first('name') }}</span>
+              <input type="text" class="form-control" id="name" name="name" placeholder="お名前を入力してください" value="{{ old('name') }}">
+              <span class="help-block"></span>
             </div>
-            <div class="form-group @if (! empty($errors->first('email'))) has-error @endif">
+            <div class="form-group input-email">
               <label for="email">メールアドレス<span class="label label-danger">必須</span></label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="メールアドレスを入力してください">
-              <span class="help-block">{{ $errors->first('email') }}</span>
+              <input type="email" class="form-control" id="email" name="email" placeholder="メールアドレスを入力してください" value="{{ old('email') }}">
+              <span class="help-block"></span>
             </div>
-            <div class="form-group @if (! empty($errors->first('subject'))) has-error @endif">
+            <div class="form-group input-subject">
               <label for="subject">件名<span class="label label-danger">必須</span></label>
-              <input type="text" class="form-control" id="subject" name="subject" placeholder="件名を入力してください">
-              <span class="help-block">{{ $errors->first('subject') }}</span>
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="件名を入力してください" value="{{ old('subject') }}">
+              <span class="help-block"></span>
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="form-group @if (! empty($errors->first('body'))) has-error @endif">
+            <div class="form-group input-body">
               <label for="body">お問い合わせ内容<span class="label label-danger">必須</span></label>
-              <textarea name="body" id="body" col="30" row="10" class="form-control" placeholder="ご自由に入力してください"></textarea>
-              <span class="help-block">{{ $errors->first('body') }}</span>
+              <textarea name="body" id="body" col="30" row="10" class="form-control" placeholder="ご自由に入力してください">{{ old('body') }}</textarea>
+              <span class="help-block"></span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-offset-4 col-xs-4">
             <input type="submit" class="btn btn-default btn-submit" value="送信">
+            <p class="loader text-center"></p>
           </div>
         </div>
       </form>
@@ -219,5 +221,6 @@
   </footer>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{ asset('js/loading.js') }}"></script>
 </body>
 </html>
