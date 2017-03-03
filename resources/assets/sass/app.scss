@@ -21,24 +21,19 @@ body {
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   text-align: center;
   background-color: #fff;
+  padding-top: 70px;
 }
 
-.header {
-  height: 100vh;
-  position: relative;
-  .first-view {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15%;
-    height: 50%;
-    margin: auto;
-    text-align: center;
-    .title {
-      font-size: 12rem;
-      font-weight: 100;
-      color: #000;
-      letter-spacing: 4rem;
+.navbar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  border-color: transparent;
+  .navbar-nav {
+    float: right;
+    .active {
+      a {
+        color: #fff;
+        background-color: #ff7777;
+      }
     }
   }
 }
@@ -48,6 +43,22 @@ body {
   font-weight: 100;
   letter-spacing: 4rem;
   margin: 50px 0;
+}
+
+.first-view {
+  height: 100vh;
+  position: relative;
+  .title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 12rem;
+    font-weight: 100;
+    color: #000;
+    letter-spacing: 4rem;
+    text-align: center;
+  }
 }
 
 .about {

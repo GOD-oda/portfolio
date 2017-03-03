@@ -11,12 +11,31 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
-  <!-- <header class="header">
-    <div class="first-view">
-      <h1 class="title">尾田</h1>
+<body role="document" data-spy="scroll" data-target="#section-list" data-offset="72">
+  <div id="scroll-target">
+    <nav class="navbar navbar-default navbar-fixed-top" style="display: none;">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">タイトル</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#section-list">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="section-list">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">人物</a></li>
+            <li><a href="#skills">技術</a></li>
+            <li><a href="#works">制作</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </header> -->
+  </nav>
+</div>
 
   <section class="first-view">
     <h1 class="title">尾田</h1>
@@ -220,7 +239,7 @@
     <p class="copy-right">© 2017 t-oda</p>
   </footer>
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{{ asset('js/loading.js') }}"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
