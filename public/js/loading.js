@@ -22,12 +22,28 @@ $(function () {
         data: form.serialize(),
         content_type: 'application/json'
       }).done(function (data) {
-        console.log(data);
-        loader.text('メールの送信が完了しました');
         $('input[name="name"]').val('');
         $('input[name="email"]').val('');
         $('input[name="subject"]').val('');
         $('textarea[name="body"').val('');
+
+        var input_name = form.find('.input-name');
+        input_name.removeClass('has-error');
+        input_name.find('.help-block').text('');
+
+        var input_email = form.find('.input-email');
+        input_email.removeClass('has-error');
+        input_email.find('.help-block').text('');
+
+        var input_subject = form.find('.input-subject');
+        input_subject.removeClass('has-error');
+        input_subject.find('.help-block').text('');
+
+        var input_body = form.find('.input-body');
+        input_body.removeClass('has-error');
+        input_body.find('.help-block').text('');
+
+        loader.text('メールの送信が完了しました');
         btn_submit.attr('disabled', false);
       }, 300).fail(function (response) {
         var response_json = response.responseJSON;
@@ -66,6 +82,6 @@ $(function () {
 
         btn_submit.attr('disabled', false);
       });
-    }, 3000);
+    }, 1500);
   });
 });
