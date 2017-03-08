@@ -1,5 +1,5 @@
 $(function () {
-  $('nav a[href^="#"]').click(function() {
+  $('nav a[href^="#"], .section-list a[href^="#"]').click(function() {
     var speed = 1500;
     var href = $(this).attr('href');
     var target = $(href == '#' || href == '' ? 'html' : href);

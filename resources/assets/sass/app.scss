@@ -21,7 +21,7 @@ body {
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   text-align: center;
   background-color: #fff;
-  padding-top: 70px;
+  // padding-top: 70px;
 }
 
 .navbar {
@@ -48,16 +48,61 @@ body {
 .first-view {
   height: 100vh;
   position: relative;
-  .title {
+  .intro-box {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    right: 0;
+    bottom: 2rem;
+    left: 0;
+    width: 80%;
+    height: 40%;
     margin: auto;
-    font-size: 12rem;
-    font-weight: 100;
-    color: #000;
-    letter-spacing: 4rem;
-    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, .2);
+    border: 2px solid #fff;
+    .intro {
+      color: #fff;
+      letter-spacing: 1rem;
+      font-size: 4rem;
+      font-weight: 100;
+      font-family: "Sawarabi Gothic";
+      .section-list {
+        margin-top: 2rem;
+        list-style-type: none;
+        padding: 0;
+        .arrow {
+          position: relative;
+          display: inline-block;
+          padding: 0 0 0 30px;
+          color: #fff;
+          vertical-align: middle;
+          text-decoration: none;
+          &::before, &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            content: "";
+            vertical-align: middle;
+          }
+        }
+        a {
+          font-size: 5rem;
+          color: #fff;
+          text-decoration: none;
+          & + a {
+            margin-left: 20rem;
+          }
+          &.triangle-right:hover::before {
+            box-sizing: border-box;
+            width: 2rem;
+            height: 2rem;
+            border: 2rem solid transparent;
+            border-left: 2rem solid #fff;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -197,5 +242,28 @@ body {
       }
     }
   }
+}
+
+// typed js
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }
 

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
 </head>
 <body role="document" data-spy="scroll" data-target="#section-list" data-offset="72">
   <div id="scroll-target">
@@ -37,8 +38,26 @@
   </nav>
 </div>
 
-  <section class="first-view">
-    <h1 class="title">尾田</h1>
+  <section class="first-view" style="background: url('./images/first-view.jpg') center center/cover no-repeat;">
+    <div class="intro-box">
+      <div class="intro">
+        <p>
+          野生の尾田が紹介を仕掛けてきた。<br>
+          どの紹介を見る？<br>
+          <ul class="section-list">
+            <a href="#about" class="arrow triangle-right">
+              <li>人物</li>
+            </a>
+            <a href="#skills" class="arrow triangle-right">
+              <li>技術</li>
+            </a>
+            <a href="#works" class="arrow triangle-right">
+              <li>制作</li>
+            </a>
+          </ul>
+        </p>
+      </div>
+    </div>
   </section>
 
   <section class="about" id="about">
@@ -110,7 +129,7 @@
     <h2 class="heading">技術</h2>
       <div class="row">
         <div class="col-sm-6">
-          <img src="{{ asset('img/icon-php.png') }}" class="skills-icon">
+          <img src="{{ asset('images/icon-php.png') }}" class="skills-icon">
           <div class="skills-title">PHP</div>
           <div class="skills-description">
             <p>
@@ -119,7 +138,7 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <img src="{{ asset('img/icon-laravel.png') }}" class="skills-icon">
+          <img src="{{ asset('images/icon-laravel.png') }}" class="skills-icon">
           <div class="skills-title">Laravel</div>
           <div class="skills-description">
             <p>
@@ -130,7 +149,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <img src="{{ asset('img/icon-db.png') }}" class="skills-icon">
+          <img src="{{ asset('images/icon-db.png') }}" class="skills-icon">
           <div class="skills-title">RDB(PostgreSQL / MySQL) / SQL</div>
           <div class="skills-description">
             <p>
@@ -140,7 +159,7 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <img src="{{ asset('img/icon-htmlcss.png') }}" class="skills-icon">
+          <img src="{{ asset('images/icon-htmlcss.png') }}" class="skills-icon">
           <div class="skills-title">HTML5 / CSS</div>
           <div class="skills-description">
             <p>2016年からデザインについて興味を持つ。細くスッキリとしたデザインを好む。</p>
@@ -154,10 +173,10 @@
 
     <div class="row">
       <div class="col-sm-5">
-        <img src="{{ asset('img/work_laravel-room1.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_laravel-room2.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_laravel-room3.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_laravel-room4.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room1.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room2.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room3.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room4.png') }}" alt="" class="works-image">
       </div>
       <div class="col-sm-7 works-outline">
         <a href="//laravel-room.com" target="_blank" class="works-title">Laravel Room</a>
@@ -172,10 +191,10 @@
     </div>
     <div class="row">
       <div class="col-sm-5">
-        <img src="{{ asset('img/work_lp1.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_lp2.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_lp3.png') }}" alt="" class="works-image">
-        <img src="{{ asset('img/work_lp4.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp1.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp2.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp3.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp4.png') }}" alt="" class="works-image">
       </div>
       <div class="col-sm-7 works-outline">
         <a href="//vform.link" target="_blank" class="works-title">vform</a>
@@ -209,7 +228,7 @@
             <div class="form-group input-subject">
               <label for="subject">件名<span class="label label-danger">必須</span></label>
               <input type="text" class="form-control" id="subject" name="subject" placeholder="件名を入力してください" value="{{ old('subject') }}">
-              <span class="help-block"></span>
+              <span class="help-block">{{ $errors->first('subject') }}</span>
             </div>
           </div>
           <div class="col-sm-6">
