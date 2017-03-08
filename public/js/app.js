@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10302,7 +10302,7 @@ __webpack_require__(3);
 
 __webpack_require__(4);
 __webpack_require__(5);
-__webpack_require__(20);
+__webpack_require__(6);
 
 /***/ }),
 /* 2 */
@@ -10315,7 +10315,7 @@ __webpack_require__(20);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
-window._ = __webpack_require__(7);
+window._ = __webpack_require__(8);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10325,7 +10325,7 @@ window._ = __webpack_require__(7);
 
 window.$ = __webpack_provided_window_dot_jQuery = __webpack_require__(0);
 
-__webpack_require__(6);
+__webpack_require__(7);
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -10413,7 +10413,7 @@ __webpack_require__(6);
         loader.text('メールの送信が完了しました');
         btn_submit.attr('disabled', false);
       }, 300).fail(function (response) {
-        var response_json = response.responseJSON;
+        var response_json = $.parseJSON(response.responseJSON);
         var invalid_error = false;
 
         if ('name' in response_json && response_json.name.length > 0) {
@@ -10485,6 +10485,78 @@ __webpack_require__(6);
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+!function (t) {
+  "use strict";
+  var s = function s(_s, e) {
+    this.el = t(_s), this.options = t.extend({}, t.fn.typed.defaults, e), this.isInput = this.el.is("input"), this.attr = this.options.attr, this.showCursor = this.isInput ? !1 : this.options.showCursor, this.elContent = this.attr ? this.el.attr(this.attr) : this.el.text(), this.contentType = this.options.contentType, this.typeSpeed = this.options.typeSpeed, this.startDelay = this.options.startDelay, this.backSpeed = this.options.backSpeed, this.backDelay = this.options.backDelay, this.stringsElement = this.options.stringsElement, this.strings = this.options.strings, this.strPos = 0, this.arrayPos = 0, this.stopNum = 0, this.loop = this.options.loop, this.loopCount = this.options.loopCount, this.curLoop = 0, this.stop = !1, this.cursorChar = this.options.cursorChar, this.shuffle = this.options.shuffle, this.sequence = [], this.build();
+  };s.prototype = { constructor: s, init: function init() {
+      var t = this;t.timeout = setTimeout(function () {
+        for (var s = 0; s < t.strings.length; ++s) {
+          t.sequence[s] = s;
+        }t.shuffle && (t.sequence = t.shuffleArray(t.sequence)), t.typewrite(t.strings[t.sequence[t.arrayPos]], t.strPos);
+      }, t.startDelay);
+    }, build: function build() {
+      var s = this;if (this.showCursor === !0 && (this.cursor = t('<span class="typed-cursor">' + this.cursorChar + "</span>"), this.el.after(this.cursor)), this.stringsElement) {
+        this.strings = [], this.stringsElement.hide(), console.log(this.stringsElement.children());var e = this.stringsElement.children();t.each(e, function (e, i) {
+          s.strings.push(t(i).html());
+        });
+      }this.init();
+    }, typewrite: function typewrite(t, s) {
+      if (this.stop !== !0) {
+        var e = Math.round(70 * Math.random()) + this.typeSpeed,
+            i = this;i.timeout = setTimeout(function () {
+          var e = 0,
+              r = t.substr(s);if ("^" === r.charAt(0)) {
+            var o = 1;/^\^\d+/.test(r) && (r = /\d+/.exec(r)[0], o += r.length, e = parseInt(r)), t = t.substring(0, s) + t.substring(s + o);
+          }if ("html" === i.contentType) {
+            var n = t.substr(s).charAt(0);if ("<" === n || "&" === n) {
+              var a = "",
+                  h = "";for (h = "<" === n ? ">" : ";"; t.substr(s + 1).charAt(0) !== h && (a += t.substr(s).charAt(0), s++, !(s + 1 > t.length));) {}s++, a += h;
+            }
+          }i.timeout = setTimeout(function () {
+            if (s === t.length) {
+              if (i.options.onStringTyped(i.arrayPos), i.arrayPos === i.strings.length - 1 && (i.options.callback(), i.curLoop++, i.loop === !1 || i.curLoop === i.loopCount)) return;i.timeout = setTimeout(function () {
+                i.backspace(t, s);
+              }, i.backDelay);
+            } else {
+              0 === s && i.options.preStringTyped(i.arrayPos);var e = t.substr(0, s + 1);i.attr ? i.el.attr(i.attr, e) : i.isInput ? i.el.val(e) : "html" === i.contentType ? i.el.html(e) : i.el.text(e), s++, i.typewrite(t, s);
+            }
+          }, e);
+        }, e);
+      }
+    }, backspace: function backspace(t, s) {
+      if (this.stop !== !0) {
+        var e = Math.round(70 * Math.random()) + this.backSpeed,
+            i = this;i.timeout = setTimeout(function () {
+          if ("html" === i.contentType && ">" === t.substr(s).charAt(0)) {
+            for (var e = ""; "<" !== t.substr(s - 1).charAt(0) && (e -= t.substr(s).charAt(0), s--, !(0 > s));) {}s--, e += "<";
+          }var r = t.substr(0, s);i.attr ? i.el.attr(i.attr, r) : i.isInput ? i.el.val(r) : "html" === i.contentType ? i.el.html(r) : i.el.text(r), s > i.stopNum ? (s--, i.backspace(t, s)) : s <= i.stopNum && (i.arrayPos++, i.arrayPos === i.strings.length ? (i.arrayPos = 0, i.shuffle && (i.sequence = i.shuffleArray(i.sequence)), i.init()) : i.typewrite(i.strings[i.sequence[i.arrayPos]], s));
+        }, e);
+      }
+    }, shuffleArray: function shuffleArray(t) {
+      var s,
+          e,
+          i = t.length;if (i) for (; --i;) {
+        e = Math.floor(Math.random() * (i + 1)), s = t[e], t[e] = t[i], t[i] = s;
+      }return t;
+    }, reset: function reset() {
+      var t = this;clearInterval(t.timeout);this.el.attr("id");this.el.empty(), "undefined" != typeof this.cursor && this.cursor.remove(), this.strPos = 0, this.arrayPos = 0, this.curLoop = 0, this.options.resetCallback();
+    } }, t.fn.typed = function (e) {
+    return this.each(function () {
+      var i = t(this),
+          r = i.data("typed"),
+          o = "object" == (typeof e === "undefined" ? "undefined" : _typeof(e)) && e;r && r.reset(), i.data("typed", r = new s(this, o)), "string" == typeof e && r[e]();
+    });
+  }, t.fn.typed.defaults = { strings: ["These are the default values...", "You know what you should do?", "Use your own!", "Have a great day!"], stringsElement: null, typeSpeed: 0, startDelay: 0, backSpeed: 0, shuffle: !1, backDelay: 500, loop: !1, loopCount: !1, showCursor: !0, cursorChar: "|", attr: null, contentType: "html", callback: function callback() {}, preStringTyped: function preStringTyped() {}, onStringTyped: function onStringTyped() {}, resetCallback: function resetCallback() {} };
+}(__webpack_provided_window_dot_jQuery);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/*!
@@ -12868,7 +12940,7 @@ if (typeof jQuery === 'undefined') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -29957,10 +30029,10 @@ if (typeof jQuery === 'undefined') {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(10)(module)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 var g;
@@ -29987,7 +30059,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -30015,93 +30087,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
 module.exports = __webpack_require__(2);
 
-
-/***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-!function (t) {
-  "use strict";
-  var s = function s(_s, e) {
-    this.el = t(_s), this.options = t.extend({}, t.fn.typed.defaults, e), this.isInput = this.el.is("input"), this.attr = this.options.attr, this.showCursor = this.isInput ? !1 : this.options.showCursor, this.elContent = this.attr ? this.el.attr(this.attr) : this.el.text(), this.contentType = this.options.contentType, this.typeSpeed = this.options.typeSpeed, this.startDelay = this.options.startDelay, this.backSpeed = this.options.backSpeed, this.backDelay = this.options.backDelay, this.stringsElement = this.options.stringsElement, this.strings = this.options.strings, this.strPos = 0, this.arrayPos = 0, this.stopNum = 0, this.loop = this.options.loop, this.loopCount = this.options.loopCount, this.curLoop = 0, this.stop = !1, this.cursorChar = this.options.cursorChar, this.shuffle = this.options.shuffle, this.sequence = [], this.build();
-  };s.prototype = { constructor: s, init: function init() {
-      var t = this;t.timeout = setTimeout(function () {
-        for (var s = 0; s < t.strings.length; ++s) {
-          t.sequence[s] = s;
-        }t.shuffle && (t.sequence = t.shuffleArray(t.sequence)), t.typewrite(t.strings[t.sequence[t.arrayPos]], t.strPos);
-      }, t.startDelay);
-    }, build: function build() {
-      var s = this;if (this.showCursor === !0 && (this.cursor = t('<span class="typed-cursor">' + this.cursorChar + "</span>"), this.el.after(this.cursor)), this.stringsElement) {
-        this.strings = [], this.stringsElement.hide(), console.log(this.stringsElement.children());var e = this.stringsElement.children();t.each(e, function (e, i) {
-          s.strings.push(t(i).html());
-        });
-      }this.init();
-    }, typewrite: function typewrite(t, s) {
-      if (this.stop !== !0) {
-        var e = Math.round(70 * Math.random()) + this.typeSpeed,
-            i = this;i.timeout = setTimeout(function () {
-          var e = 0,
-              r = t.substr(s);if ("^" === r.charAt(0)) {
-            var o = 1;/^\^\d+/.test(r) && (r = /\d+/.exec(r)[0], o += r.length, e = parseInt(r)), t = t.substring(0, s) + t.substring(s + o);
-          }if ("html" === i.contentType) {
-            var n = t.substr(s).charAt(0);if ("<" === n || "&" === n) {
-              var a = "",
-                  h = "";for (h = "<" === n ? ">" : ";"; t.substr(s + 1).charAt(0) !== h && (a += t.substr(s).charAt(0), s++, !(s + 1 > t.length));) {}s++, a += h;
-            }
-          }i.timeout = setTimeout(function () {
-            if (s === t.length) {
-              if (i.options.onStringTyped(i.arrayPos), i.arrayPos === i.strings.length - 1 && (i.options.callback(), i.curLoop++, i.loop === !1 || i.curLoop === i.loopCount)) return;i.timeout = setTimeout(function () {
-                i.backspace(t, s);
-              }, i.backDelay);
-            } else {
-              0 === s && i.options.preStringTyped(i.arrayPos);var e = t.substr(0, s + 1);i.attr ? i.el.attr(i.attr, e) : i.isInput ? i.el.val(e) : "html" === i.contentType ? i.el.html(e) : i.el.text(e), s++, i.typewrite(t, s);
-            }
-          }, e);
-        }, e);
-      }
-    }, backspace: function backspace(t, s) {
-      if (this.stop !== !0) {
-        var e = Math.round(70 * Math.random()) + this.backSpeed,
-            i = this;i.timeout = setTimeout(function () {
-          if ("html" === i.contentType && ">" === t.substr(s).charAt(0)) {
-            for (var e = ""; "<" !== t.substr(s - 1).charAt(0) && (e -= t.substr(s).charAt(0), s--, !(0 > s));) {}s--, e += "<";
-          }var r = t.substr(0, s);i.attr ? i.el.attr(i.attr, r) : i.isInput ? i.el.val(r) : "html" === i.contentType ? i.el.html(r) : i.el.text(r), s > i.stopNum ? (s--, i.backspace(t, s)) : s <= i.stopNum && (i.arrayPos++, i.arrayPos === i.strings.length ? (i.arrayPos = 0, i.shuffle && (i.sequence = i.shuffleArray(i.sequence)), i.init()) : i.typewrite(i.strings[i.sequence[i.arrayPos]], s));
-        }, e);
-      }
-    }, shuffleArray: function shuffleArray(t) {
-      var s,
-          e,
-          i = t.length;if (i) for (; --i;) {
-        e = Math.floor(Math.random() * (i + 1)), s = t[e], t[e] = t[i], t[i] = s;
-      }return t;
-    }, reset: function reset() {
-      var t = this;clearInterval(t.timeout);this.el.attr("id");this.el.empty(), "undefined" != typeof this.cursor && this.cursor.remove(), this.strPos = 0, this.arrayPos = 0, this.curLoop = 0, this.options.resetCallback();
-    } }, t.fn.typed = function (e) {
-    return this.each(function () {
-      var i = t(this),
-          r = i.data("typed"),
-          o = "object" == (typeof e === "undefined" ? "undefined" : _typeof(e)) && e;r && r.reset(), i.data("typed", r = new s(this, o)), "string" == typeof e && r[e]();
-    });
-  }, t.fn.typed.defaults = { strings: ["These are the default values...", "You know what you should do?", "Use your own!", "Have a great day!"], stringsElement: null, typeSpeed: 0, startDelay: 0, backSpeed: 0, shuffle: !1, backDelay: 500, loop: !1, loopCount: !1, showCursor: !0, cursorChar: "|", attr: null, contentType: "html", callback: function callback() {}, preStringTyped: function preStringTyped() {}, onStringTyped: function onStringTyped() {}, resetCallback: function resetCallback() {} };
-}(__webpack_provided_window_dot_jQuery);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
