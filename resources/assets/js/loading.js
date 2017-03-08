@@ -46,7 +46,7 @@ $(function () {
         loader.text('メールの送信が完了しました');
         btn_submit.attr('disabled', false);
       }, 300).fail(function (response) {
-        var response_json = response.responseJSON;
+        var response_json = $.parseJSON(response.responseJSON);
         var invalid_error = false;
 
         if ('name' in response_json && response_json.name.length > 0) { // invalid name
