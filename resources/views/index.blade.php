@@ -69,7 +69,7 @@
         </div>
         <div class="col-xs-12 col-sm-10">
           <p class="history-text">
-            通知簿の先生からの一言に「落ち着きがない」と必ず最初に書かれる。<br>
+            通知簿の先生からの一言に「落ち着きがない」と必ず最初に書かれる。<br class="hidden-xs">
             家ではゲーム、外ではドッヂボールや野球をするなど、インドア・アウトドアの両立をこなす。
           </p>
         </div>
@@ -80,8 +80,8 @@
         </div>
         <div class="col-xs-12 col-sm-10">
           <p class="history-text">
-            部活動は軟式テニスを選択する。ポジションは前衛。後衛がうまいので１番手を務める。<br>
-            この頃から数学に苦手意識を覚える。数学の勉強をするくらいならスマブラDXをするほど嫌悪していた。<br>
+            部活動は軟式テニスを選択する。ポジションは前衛。後衛がうまいので１番手を務める。<br class="hidden-xs">
+            この頃から数学に苦手意識を覚える。数学の勉強をするくらいならスマブラDXをするほど嫌悪していた。<br class="hidden-xs">
             父の影響もあり麻雀を始める。ゲームボーイの「役満」というゲームを楽しむが、役満仙人はトラウマである。
           </p>
         </div>
@@ -92,7 +92,8 @@
         </div>
         <div class="col-xs-12 col-sm-10">
           <p class="history-text">
-            進学コースを選択していたが入学当初は進学する気はさらさら無かったので、PSPの「MHP 2ndG」で遊んでいた。ダークネスというランスが好きだった。<br>
+            進学コースを選択していたが入学当初は進学する気はさらさら無かったので、PSPの「MHP 2ndG」で遊んでいた。ダークネスというランスが好きだった。<br class="hidden-xs">
+            苗字からODA（オーディーエー）と呼ばれるようになる。一部の人からは略称として「オーディー」や「オズ」と呼ばれることも。アクセントはつけない。<br class="hidden-xs">
             典型的日本人の特性をフル活用して、周りが進学するのに合わせて勉強をするようになる。
           </p>
         </div>
@@ -103,8 +104,8 @@
         </div>
         <div class="col-xs-12 col-sm-10">
           <p class="history-text">
-            １年の浪人を経て近畿大学経営学部に入学する。英語の講義でたまたま出会った２人とオンラインゲームにハマり、以後卒業するまでほとんど行動を共にする。<br>
-            ITビジネスコースを専攻していたこともあり、ネットビジネスについて学ぶようになる。<br>
+            １年の浪人を経て近畿大学経営学部に入学する。英語の講義でたまたま出会った２人とオンラインゲームにハマり、以後卒業するまでほとんど行動を共にする。<br class="hidden-xs">
+            ITビジネスコースを専攻していたこともあり、ネットビジネスについて学ぶようになる。<br class="hidden-xs">
             専門科目で教授の補佐をするというアルバイト（TSA）を始める。リーダーを務め、TSAを盛り上げることに尽力した。
           </p>
         </div>
@@ -115,9 +116,9 @@
         </div>
         <div class="col-xs-12 col-sm-10">
           <p class="history-text">
-            TSAとしてHTMLやCSS、JavaScriptといったwebに関する講義に参加し、webの面白さに興味を惹かれるようになる。また、RDBに関する講義も受け、RDBのイロハを学んだ。<br>
-            こうした経緯からweb業界に身を置くことになる。<br>
-            現在はフリーランスの傍、自分でwebサービスを作っている。<br>
+            TSAとしてHTMLやCSS、JavaScriptといったwebに関する講義に参加し、webの面白さに興味を惹かれるようになる。また、RDBに関する講義も受け、RDBのイロハを学んだ。<br class="hidden-xs">
+            こうした経緯からweb業界に身を置くことになる。<br class="hidden-xs">
+            現在はフリーランスの傍、自分でwebサービスを作っている。<br class="hidden-xs">
             暇があるとカンファレンスなどの動画を見る。特にPHPカンファレンスやDB勉強会の動画はよく見る。
           </p>
         </div>
@@ -142,7 +143,7 @@
         <div class="skills-title">Laravel</div>
         <div class="skills-description">
           <p>
-            一番好きなフレームワーク。Laravelのコアコードを追いかけるのが好き。<br>
+            一番好きなフレームワーク。Laravelのコアコードを追いかけるのが好き。<br class="hidden-xs">
             新しい機能が追加されればすぐに試す。Laravelの布教を目論んでいる。
           </p>
         </div>
@@ -177,9 +178,9 @@
         <a href="//laravel-room.com" target="_blank" class="works-title">Laravel Room</a>
         <p class="works-description">
           PHP7.0、Laravel5.3、HTML5、CSS3、MaterializeCSS、MySQLを使用した。
-         「 自分で一から何か作りたい」と「Laravelで技術ブログを作りたい」という気持ちから誕生した。<br>
+         「 自分で一から何か作りたい」と「Laravelで技術ブログを作りたい」という気持ちから誕生した。<br class="hidden-xs">
          ベータ版の制作期間はバックエンドが約２〜３週間、フロントエンドが約１〜２週間の１ヶ月。
-         最近はタグ機能を追加した。<br>
+         最近はタグ機能を追加した。<br class="hidden-xs">
          マテリアルデザインが好きなので、手軽に実装できるMaterializeCSSを利用した。
         </p>
       </div>
@@ -194,8 +195,8 @@
       <div class="col-sm-7 col-md-push-5 works-outline">
         <a href="//vform.link" target="_blank" class="works-title">vform</a>
         <p class="works-description">
-          初めて制作したランディングページ。白と黒の使い分けを意識して制作した。<br>
-          ほとんど自力でCSSを書いたので良い経験となった。もちろんレスポンシブ。<br>
+          初めて制作したランディングページ。白と黒の使い分けを意識して制作した。<br class="hidden-xs">
+          ほとんど自力でCSSを書いたので良い経験となった。もちろんレスポンシブ。<br class="hidden-xs">
           実装期間は約１週間。ある程度作ったところで、デザインが気に食わないから一から作り直したこともあった。
         </p>
       </div>
