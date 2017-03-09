@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>t-oda.tech portfolio</title>
+  <title>t-oda's portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="author" content="oda">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,7 +17,7 @@
     <nav class="navbar navbar-default navbar-fixed-top" style="display: none;">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">タイトル</a>
+          <a class="navbar-brand" href="/">t-oda's portfolio</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#section-list">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -42,7 +42,7 @@
     <div class="intro-box">
       <div class="intro">
         <p>
-          野生の尾田が紹介を仕掛けてきた。<br>
+          野生の尾田が紹介を仕掛けてきた。<br class="hidden-xs">
           どの紹介を見る？<br>
           <ul class="section-list">
             <a href="#about" class="arrow triangle-right">
@@ -64,10 +64,10 @@
     <div class="container">
       <h2 class="heading">人物</h2>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-sm-2">
           <h3 class="history-title">小学校時代</h3>
         </div>
-        <div class="col-xs-10">
+        <div class="col-xs-12 col-sm-10">
           <p class="history-text">
             通知簿の先生からの一言に「落ち着きがない」と必ず最初に書かれる。<br>
             家ではゲーム、外ではドッヂボールや野球をするなど、インドア・アウトドアの両立をこなす。
@@ -75,10 +75,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-sm-2">
           <h3 class="history-title">中学校時代</h3>
         </div>
-        <div class="col-xs-10">
+        <div class="col-xs-12 col-sm-10">
           <p class="history-text">
             部活動は軟式テニスを選択する。ポジションは前衛。後衛がうまいので１番手を務める。<br>
             この頃から数学に苦手意識を覚える。数学の勉強をするくらいならスマブラDXをするほど嫌悪していた。<br>
@@ -87,10 +87,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-sm-2">
           <h3 class="history-title">高校時代</h3>
         </div>
-        <div class="col-xs-10">
+        <div class="col-xs-12 col-sm-10">
           <p class="history-text">
             進学コースを選択していたが入学当初は進学する気はさらさら無かったので、PSPの「MHP 2ndG」で遊んでいた。ダークネスというランスが好きだった。<br>
             典型的日本人の特性をフル活用して、周りが進学するのに合わせて勉強をするようになる。
@@ -98,10 +98,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-sm-2">
           <h3 class="history-title">大学時代</h3>
         </div>
-        <div class="col-xs-10">
+        <div class="col-xs-12 col-sm-10">
           <p class="history-text">
             １年の浪人を経て近畿大学経営学部に入学する。英語の講義でたまたま出会った２人とオンラインゲームにハマり、以後卒業するまでほとんど行動を共にする。<br>
             ITビジネスコースを専攻していたこともあり、ネットビジネスについて学ぶようになる。<br>
@@ -110,10 +110,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-sm-2">
           <h3 class="history-title">現在</h3>
         </div>
-        <div class="col-xs-10">
+        <div class="col-xs-12 col-sm-10">
           <p class="history-text">
             TSAとしてHTMLやCSS、JavaScriptといったwebに関する講義に参加し、webの面白さに興味を惹かれるようになる。また、RDBに関する講義も受け、RDBのイロハを学んだ。<br>
             こうした経緯からweb業界に身を置くことになる。<br>
@@ -127,58 +127,53 @@
 
   <section class="skills" id="skills">
     <h2 class="heading">技術</h2>
-      <div class="row">
-        <div class="col-sm-6">
-          <img src="{{ asset('images/icon-php.png') }}" class="skills-icon">
-          <div class="skills-title">PHP</div>
-          <div class="skills-description">
-            <p>
-              社会人になって初めて学んだプログラミング言語。その分思い入れも強い。var_dump派である。
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <img src="{{ asset('images/icon-laravel.png') }}" class="skills-icon">
-          <div class="skills-title">Laravel</div>
-          <div class="skills-description">
-            <p>
-              一番好きなフレームワーク。Laravelのコアコードを追いかけるのが好き。
-            </p>
-          </div>
+    <div class="row">
+      <div class="col-sm-6 skill-box">
+        <img src="{{ asset('images/icon-php.png') }}" class="skills-icon">
+        <div class="skills-title">PHP</div>
+        <div class="skills-description">
+          <p>
+            社会人になって初めて学んだプログラミング言語。その分思い入れも強い。var_dump派である。
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <img src="{{ asset('images/icon-db.png') }}" class="skills-icon">
-          <div class="skills-title">RDB(PostgreSQL / MySQL) / SQL</div>
-          <div class="skills-description">
-            <p>
-              データの寿命はコードよりも長いという言葉に衝撃を受け、RDBについて勉強し直した。
-              目XPLAINが出来るようになりたい。
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <img src="{{ asset('images/icon-htmlcss.png') }}" class="skills-icon">
-          <div class="skills-title">HTML5 / CSS</div>
-          <div class="skills-description">
-            <p>2016年からデザインについて興味を持つ。細くスッキリとしたデザインを好む。</p>
-          </div>
+      <div class="col-sm-6 skill-box">
+        <img src="{{ asset('images/icon-laravel.png') }}" class="skills-icon">
+        <div class="skills-title">Laravel</div>
+        <div class="skills-description">
+          <p>
+            一番好きなフレームワーク。Laravelのコアコードを追いかけるのが好き。<br>
+            新しい機能が追加されればすぐに試す。Laravelの布教を目論んでいる。
+          </p>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 skill-box">
+        <img src="{{ asset('images/icon-db.png') }}" class="skills-icon">
+        <div class="skills-title">RDB(PostgreSQL / MySQL) / SQL</div>
+        <div class="skills-description">
+          <p>
+            データの寿命はコードよりも長いという言葉に衝撃を受け、RDBについて勉強し直した。
+            目XPLAINが出来るようになりたい。
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-6 skill-box">
+        <img src="{{ asset('images/icon-htmlcss.png') }}" class="skills-icon">
+        <div class="skills-title">HTML5 / CSS</div>
+        <div class="skills-description">
+          <p>2016年からデザインについて興味を持つ。細くスッキリとしたデザインを好む。</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="works" id="works">
     <h2 class="heading">制作</h2>
 
     <div class="row">
-      <div class="col-sm-5">
-        <img src="{{ asset('images/work_laravel-room1.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_laravel-room2.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_laravel-room3.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_laravel-room4.png') }}" alt="" class="works-image">
-      </div>
-      <div class="col-sm-7 works-outline">
+      <div class="col-sm-7 col-md-push-5 works-outline">
         <a href="//laravel-room.com" target="_blank" class="works-title">Laravel Room</a>
         <p class="works-description">
           PHP7.0、Laravel5.3、HTML5、CSS3、MaterializeCSS、MySQLを使用した。
@@ -188,21 +183,27 @@
          マテリアルデザインが好きなので、手軽に実装できるMaterializeCSSを利用した。
         </p>
       </div>
+      <div class="col-sm-5 col-md-pull-7">
+        <img src="{{ asset('images/work_laravel-room1.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room2.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room3.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_laravel-room4.png') }}" alt="" class="works-image">
+      </div>
     </div>
     <div class="row">
-      <div class="col-sm-5">
-        <img src="{{ asset('images/work_lp1.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_lp2.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_lp3.png') }}" alt="" class="works-image">
-        <img src="{{ asset('images/work_lp4.png') }}" alt="" class="works-image">
-      </div>
-      <div class="col-sm-7 works-outline">
+      <div class="col-sm-7 col-md-push-5 works-outline">
         <a href="//vform.link" target="_blank" class="works-title">vform</a>
         <p class="works-description">
           初めて制作したランディングページ。白と黒の使い分けを意識して制作した。<br>
           ほとんど自力でCSSを書いたので良い経験となった。もちろんレスポンシブ。<br>
           実装期間は約１週間。ある程度作ったところで、デザインが気に食わないから一から作り直したこともあった。
         </p>
+      </div>
+      <div class="col-sm-5 col-md-pull-7">
+        <img src="{{ asset('images/work_lp1.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp2.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp3.png') }}" alt="" class="works-image">
+        <img src="{{ asset('images/work_lp4.png') }}" alt="" class="works-image">
       </div>
     </div>
   </section>
@@ -240,7 +241,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-offset-4 col-xs-4">
+          <div class="col-xs-12 col-md-offset-4 col-md-4">
             <input type="submit" class="btn btn-default btn-submit" value="送信">
             <p class="loader text-center"></p>
           </div>
